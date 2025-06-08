@@ -1,0 +1,80 @@
+@charset "utf-8";
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/background.png");
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    backdrop-filter: blur(1px);
+}
+
+.foot{
+    margin-top: 0px;
+    width: 100vw;
+    height: 100px;
+    float: left;
+    clear: both;
+    text-align: center;
+    margin-bottom: 0px;
+    background-color: rgba(84, 132, 161, 0.8);
+}
+.foot p{
+    line-height: 10px;
+    color: rgb(28, 43, 43);
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100vw - 19px);
+    height: 70px;
+    top: 0px;
+    background-color: rgb(123, 161, 197);
+    overflow: hidden;
+    font-size: 20px;
+    color: rgb(234, 247, 255);
+    opacity: 0.8;
+    /* 设置导航栏的堆叠顺序，确保它显示在其他元素之上 */
+    z-index: 1000;
+}
+nav .navtitle{
+    padding-left: 50px;
+    width: 30%;
+}
+nav .navtitle strong{
+    font-size: 50px;
+    font-weight: bolder;
+}
+nav .navlist{
+    display: flex;
+    list-style: none;
+}
+nav .navlist li{
+    margin-right: 20px;
+}
+nav .navlist li:last-child{
+    margin-right: 200px;
+}
+nav a{
+   display: block;
+   justify-content: center;
+   text-decoration: none;
+   z-index: 1;
+   height: inherit;
+   line-height: 70px;
+   width: 120px;
+   text-align: center;
+   font-weight: bolder;
+   color: rgb(84, 109, 158);
+   transition: 0.5s;
+}
+
+nav a:hover{
+    color: rgb(234, 247, 255);
+    background-color: rgb(108, 149, 187); 
+}

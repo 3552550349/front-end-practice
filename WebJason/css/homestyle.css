@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+.titleimg{
+    background-image: url("../image/head.jpeg");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: 0.5s 0s ease ;
+    animation: load 0.5s;
+}
+@keyframes load{
+    0%{
+        background-position-y: 50px;
+        opacity: 0;
+    }
+    100%{
+        background-position-y: 0px;
+        opacity: 1;
+    }
+}
+
+
+.titleimg .title{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 100px;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(247, 5, 5, 0.61);
+}
+
+.main{
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sec{
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+
+.sec .content-nav{
+    height: calc(100vh - 70px);
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.sec ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.sec ul li{
+    list-style: none;
+    margin: auto;
+}
+.sec ul li:last-child{
+    margin-right: 100px;    
+}
+.pt{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 250px;
+    float: left;
+    margin: 150px 0px 0px 105px;
+    background: rgba(219, 235, 241,0.8);
+    box-shadow: 0 0 15px rgb(59, 73, 95);
+    border-radius: 15px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: all 0.5s ease 0s;
+}
+.pt:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+/* 隐藏溢出的内容 */
+.imghid{
+    overflow: hidden;
+}
+/* 为不同类别的图片元素设置不同的背景图片 */
+.part1 .img{
+    background-image: url("../image/homepic1.png");
+}
+.part2 .img{
+    background-image: url("../image/homepic2.png");
+}
+.part3 .img{
+    background-image: url("../image/homepic3.png");
+}
+.part4 .img{
+    background-image: url("../image/homepic4.png");
+}
+
+.pt .img{
+    height: 190px;
+    width: 250px;
+    background-size: cover;
+    background-position: 0px -30px;
+    /* 设置过渡效果和透明度 */
+    transition: all 0.5s ease 0s;
+    opacity: 0.8;
+}
+
+.pt .img:hover{
+    transform: scale(1.1);
+}
+
+.pt .txt{
+    height: 310px;
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}
+
+.pt .txt h1{
+    text-align: center;
+    font-size: 3em;
+    color: rgb(28, 44, 68);
+    height: 30px;
+    line-height: 30px;
+}
+
+.pt .txt p{
+    margin-top: -2px;
+    word-wrap: break-word;
+    color: rgb(114, 182, 202);
+}

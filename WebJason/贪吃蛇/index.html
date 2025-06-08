@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>贪吃蛇</title>
+</head>
+<body>
+    <div class="panbg"></div>
+    <div class="btnbox">
+         <div class="score">得分：<span>0</span></div>
+        <button class="btn" id="start">start</button>
+        <button class="btn" id="pause">pause</button>
+        <button class="btn" id="restart">restart</button>
+    </div>
+    <div class="map">
+    </div>
+    <audio src="./gameing.mp3"></audio>
+    <script src="./food.js"></script>
+    <script src="./snake.js"></script>
+    <script src="./game.js"></script>
+    <script>
+        const game = new Game(".map",".score span",".panbg");
+        const start = document.getElementById("start");
+        const pause = document.getElementById("pause");
+        const restart = document.getElementById("restart");
+
+        start.addEventListener("click", () => {
+            game.startGame(); 
+        })
+        pause.addEventListener("click", () => {
+            game.stopGame(); 
+        })
+        restart.addEventListener("click", () => {
+            game.restartGame(); 
+        })
+        // 键盘控制
+        document.addEventListener("keydown", (e) => {
+            switch (e.keyCode) {
+                case 37: // 左
+                    game.changeDir("left");
+                    break;
+                case 38: // 上
+                    game.changeDir("top");
+                    break;
+                case 39: // 右
+                    game.changeDir("right");
+                    break;
+                case 40: // 下
+                    game.changeDir("bottom"); 
+                    break;
+                case 13: // 回车
+                    game.startGame();
+                    break;
+                case 32: // 空格
+                    game.stopGame();
+                    break;
+                default:
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>

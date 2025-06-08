@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+body{
+   background: url(./image/background.jpg) no-repeat;
+   background-size: cover;
+}
+.btnbox{
+   width: 200px;
+   height: 400px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   position: fixed;
+}
+.btnbox button{
+   width: 100px;
+   height: 50px;
+   font-size: 23px;
+   background-color: #00fa9a;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: all 0.5s;
+}
+.btnbox button:hover{
+   background-color: #00ff7f; 
+   transform:scale(1.1);
+}
+.map{
+   width: 1200px;
+   height: 720px;
+   background: url(./image/block.jpg);
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   box-shadow: 0px 0px 100px  #000000 inset, 0px 0px 30px #3b3b3b;
+}
+.map>div{
+   width: 24px;
+   height: 24px; 
+   position: absolute;
+   border-radius: 50%;
+   box-shadow: 0px 0px 10px yellow;
+}
+div.head{
+   background: repeating-radial-gradient(#ffc000,#ff4e00);
+}
+div.body{
+   background: repeating-radial-gradient(#fff369,#fa791a);
+}
+div.food{
+   background: repeating-radial-gradient(#a7fa64,#4f8524);
+   animation: foodAnimation 2s linear infinite ;
+}
+@keyframes foodAnimation{
+   0%{box-shadow: 0px 0px 10px white;}
+
+   50%{box-shadow: 0px 0px 100px white;}
+
+   100%{box-shadow: 0px 0px 10px white;} 
+}
+.score{
+    font-size: 25px;
+    color: #fff;
+}
+.score span{
+    color: #00fa9a;
+    font-weight: bold;
+}
+.panbg{
+    width: 1200px;
+    height: 720px;
+    background: rgba(0, 0, 0, 0.5) url(./image/gameover.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+}

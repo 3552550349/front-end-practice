@@ -1,0 +1,75 @@
+@charset "utf-8";
+.mid{
+    height: 92vh;
+    width: 100vw;
+}
+
+.banner{
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 1150px;
+    height: 421px;
+    animation: imgload1 1s linear;
+}
+
+.banner li{
+    float: left;
+    position: absolute;
+    left: 0px;
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+
+.banner img{
+    transition: all .5s;
+    filter: grayscale(0.5);
+}
+
+.banner img:hover{
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+
+.banner div{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(123, 168, 175);
+    float: left;
+    bottom: -100px;
+}
+
+/* 添加图标样式 */
+.banner .play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s;
+}
+.banner li:hover .play-pause-btn {
+    opacity: 1;
+}
+
+
+@keyframes imgload1{
+    0%{
+        opacity: 0;
+        margin-top: 300px;
+    }100%{
+        opacity: 1;
+        margin-top: 170px;
+    }
+}

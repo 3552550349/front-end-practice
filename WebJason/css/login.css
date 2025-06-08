@@ -1,0 +1,132 @@
+@charset "utf-8";
+ /* 设置全局 body 元素样式 */
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    color: rgb(44, 59, 59);
+    overflow: hidden;
+}
+
+ /* 设置登录背景容器样式 */
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/loginback.jpg");
+    background-repeat: no-repeat;
+    /* 让背景图片按比例缩放以覆盖整个容器 */
+    background-size: cover;
+    /* 将容器放大 1.05 倍 */
+    transform: scale(1.05);
+}
+
+/* 为登录背景容器添加伪元素样式，用于实现模糊效果 */
+.back::before{
+    /* 伪元素内容为空 */
+    content: "";
+    width: 100%;
+    height: 100%;
+    /* 应用模糊滤镜，模糊半径为 10px */
+    backdrop-filter: blur(5px); 
+    position: fixed;
+}
+
+/* 设置鼠标悬停在登录背景容器上时，伪元素的样式 */
+.back:hover::before{
+    backdrop-filter: none;
+}
+
+/* 设置登录框容器样式 */
+.log{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+    min-height: 300px;
+    background-color: rgba(50, 59, 88, 0.7);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow:0 0 10px rgba(50, 59, 88, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+/* 设置登录标题样式 */
+.logtitle{
+    font-size: 40px;
+    font-weight: bolder;
+    background-clip: text;
+    /* 设置登录标题为线性渐变 */
+    background-image: linear-gradient(90deg , rgba(98, 201, 248,0.6),rgba(243, 111, 255, 0.6),rgba(247, 129, 129, 0.6),rgba(241, 239, 104, 0.6),rgba(117, 226, 84, 0.6),rgba(98, 201, 248,0.6));
+    background-size: 600%;
+        animation: gradient 30s infinite linear;
+        color: transparent;
+        line-height: 100px;
+    }
+     @keyframes gradient{
+        100%{
+            background-position: -600% 0%;
+        }
+    }
+
+    /* 设置登录表单中输入框的样式 */
+    .logbody .txt{
+        border: none;
+        border-bottom: 1px solid rgba(18, 21, 32, 0.7);
+        background: transparent;
+        transition: 0.3s;
+        height: 30px;
+        padding-top: 10px;
+    }
+    .logbody .txt:hover{
+        transform: scaleX(1.1);
+    }
+
+    /* 设置登录表单输入框获得焦点时的样式 */
+    .logbody .txt:focus{
+        outline: none;
+        border-bottom:  1px solid rgba(137, 160, 245, 0.7);
+        color: rgba(137, 160, 245, 0.7);
+    }
+
+   /* 设置登录表单提交按钮的样式 */ 
+    .logbody .sub{
+        width: 80%;
+        height: 45px;
+        margin-top: 10%;
+        margin-left: 10%;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(86, 116, 156,0.8);
+        font-size: 18px;
+        font-family: "楷体";
+        color: rgb(180, 216, 233);
+        transition: 0.3s;
+    }
+
+   /* 设置鼠标悬停在登录表单提交按钮上时的样式 */
+    .logbody .sub:hover{
+        background-color: rgba(118, 155, 202, 0.8);
+        box-shadow: 0 0 10px rgba(118, 155, 202, 0.8);
+    }
+
+  /* 设置游客登录按钮的样式 */ 
+    .ykbt{
+        font-size: 14px;
+        margin-top: 20px;
+        margin-left: 70%;
+        border: none;
+        background-color: transparent;
+        transition: 0.3s;
+    }
+
+    /* 设置鼠标悬停在游客登录按钮上时的样式 */
+    .ykbt:hover{
+        color: rgb(64, 160, 216);
+    }
+
+
+   
